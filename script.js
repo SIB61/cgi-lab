@@ -420,11 +420,20 @@ function R(pos) {
 }
 
 function S(pos) {
-  drawTopLine(pos);
-  drawBottomLine(pos);
-  drawLeftLine(pos, 0, 2);
-  drawHorizontalMiddleLine(pos);
-  drawRightLine(pos, 2, 4);
+  drawTopLine(pos, 1, 4);
+  drawBottomLine(pos, 0, 3);
+  drawLeftHalfCircle(
+    X_MIN(pos) + xQuadLength(pos),
+    Y_MIN + yQuadLength,
+    yQuadLength
+  );
+  drawRightHalfCircle(
+    X_MIN(pos) + xQuadLength(pos) * 3,
+    Y_MIN + yQuadLength * 3,
+    yQuadLength
+  );
+  drawHorizontalMiddleLine(pos, 1, 3);
+  // drawHorizontalMiddleLine(pos);
 }
 
 function T(pos) {
